@@ -25,7 +25,7 @@ You can return the answer in any order.
                 
     
     
-   ''' Solution 2
+   Solution 2
   
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         
