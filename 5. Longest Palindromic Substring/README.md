@@ -9,7 +9,6 @@ Output: "bab"
 Note: "aba" is also a valid answer.
 ```
 
-class Solution:
     def longestPalindrome(self, s: str) -> str:
         res = ""
         resLen = 0
