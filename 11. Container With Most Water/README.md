@@ -11,6 +11,7 @@ Explanation: The above vertical lines are represented by array [1,8,6,2,5,4,8,3,
 In this case, the max area of water (blue section) the container can contain is 49.
 ```
 
+Brute Force:
 
     def maxArea(self, height: List[int]) -> int:
         #Brute Force
@@ -23,6 +24,8 @@ In this case, the max area of water (blue section) the container can contain is 
         return res
         #time limit reached
         
+Linear time soluton:
+
      def maxArea(self, height: List[int]) -> int:
         #Linear time: O(n)
         res = 0
