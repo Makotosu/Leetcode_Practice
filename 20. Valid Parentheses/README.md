@@ -15,7 +15,7 @@ Output: true
 Input: s = "([)]"
 Output: false
 ```
-class Solution:
+
     def isValid(self, s: str) -> bool:
         while len(s) > 0:
             l = len(s)
@@ -25,9 +25,6 @@ class Solution:
         return True
         
  ```
- 2
- ```
- class Solution:
     def isValid(self, s: str) -> bool:
         stack = []
         closeToOpen = {")":"(", "]":"[", "}":"{"}
