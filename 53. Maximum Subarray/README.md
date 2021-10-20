@@ -12,6 +12,7 @@ Output: 6
 Explanation: [4,-1,2,1] has the largest sum = 6.
 ```
 
+```
 def maxSubArray(self, nums: List[int]) -> int:
         res = [nums[0]]
         max_sub = nums[0]
@@ -20,5 +21,6 @@ def maxSubArray(self, nums: List[int]) -> int:
             res.append(j)
             max_sub = max(max_sub,j)
         return max_sub
+ ```
                 
                 
