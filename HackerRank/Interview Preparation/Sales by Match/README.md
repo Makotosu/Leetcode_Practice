@@ -8,6 +8,7 @@ import random
 import re
 import sys
 
+```
 #
 # Complete the 'sockMerchant' function below.
 #
@@ -39,3 +40,4 @@ if __name__ == '__main__':
     fptr.write(str(result) + '\n')
 
     fptr.close()
+ ```
