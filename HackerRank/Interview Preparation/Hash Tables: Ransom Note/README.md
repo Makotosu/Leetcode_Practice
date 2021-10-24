@@ -17,4 +17,5 @@ def checkMagazine(magazine, note):
         print("Yes")
     else:
         print("No")
+ #A Counter is a container that keeps track of how many times equivalent values are added. 
 ```
