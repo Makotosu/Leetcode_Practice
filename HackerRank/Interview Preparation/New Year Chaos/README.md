@@ -16,3 +16,19 @@ Sample Output
 3
 Too chaotic
 ```
+```
+def minimumBribes(q):
+    # Write your code here
+    bribe = 0
+    q = [i-1 for i in q] #shift the index so that starts from o
+    for i,o in enumerate(q):
+        cur = i
+        if (o-cur) >= 3:
+            print("Too chaotic")
+            return 
+
+        for k in q[max(o-1,0):i]:
+            if k >o:
+                bribe += 1
+    print(bribe)
+```
