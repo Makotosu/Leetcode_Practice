@@ -26,14 +26,15 @@ def commonChild(s1, s2):
 Model Solution
 ```
 def commonChild(s1, s2):
-    m = [[0]*(len(s2)+1) for _ in range(len(s1)+1)]
-    for i,c in enumerate(s1,1):
+    m = [[0]*(len(s2)+1) for _ in range(len(s1)+1)] # construct an (n+1)x(n+1) matrix
+    
+    for i,c in enumerate(s1,1): #enumerate, start =1
         for j,d in enumerate(s2,1):
             if c == d:
                 m[i][j] = m[i-1][j-1]+1
             else:
                 m[i][j] = max(m[i][j-1],m[i-1][j])
                    
-    return m[-1][-1]
+    return m[-1][-1] #bottom right element in the matrix    
 ```
 
