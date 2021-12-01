@@ -15,3 +15,21 @@ Output: 2
 Input: isConnected = [[1,0,0],[0,1,0],[0,0,1]]
 Output: 3
 ```
+```
+class Solution:
+    def findCircleNum(self, isConnected: List[List[int]]) -> int:
+        def dfs(start):
+            visited.add(start)
+            for end in range(len(isConnected)):
+                if isConnected[start][end] and end not in visited:
+                    dfs(end)
+        
+        num = 0
+        visited = set()
+        for start in range(len(isConnected)):
+            if start not in visited:
+                num += 1
+                dfs(start)
+        
+        return num 
+```
