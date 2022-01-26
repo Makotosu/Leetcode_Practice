@@ -26,4 +26,5 @@ class Solution:
 		#zfill used for 32 bits formation 
         
         return int(n,2)
+	# bin(5) = 0b101, returns the binary string equivalent to the given integer.
 ```
