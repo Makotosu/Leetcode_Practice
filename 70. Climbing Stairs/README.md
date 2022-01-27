@@ -1,4 +1,4 @@
-### 70. Climbing Stairs
+### 70. Climbing Stairs (Dynamic Programming)
 
 https://leetcode.com/problems/climbing-stairs/submissions/
 
