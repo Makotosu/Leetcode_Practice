@@ -29,4 +29,6 @@ class Solution:
                     dp[a] = min(dp[a], 1 + dp[a-c])
         
         return dp[amount] if dp[amount] != amount + 1 else -1 
+        # runtime: O(amount * len(coins))
+        # memory: O(amount)
  ```       
