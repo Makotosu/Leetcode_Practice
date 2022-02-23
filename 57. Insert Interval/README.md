@@ -22,5 +22,52 @@ Input: intervals = [[1,2],[3,5],[6,7],[8,10],[12,16]], newInterval = [4,8]
 Output: [[1,2],[3,10],[12,16]]
 Explanation: Because the new interval [4,8] overlaps with [3,5],[6,7],[8,10].
 ```
-
+Partial, Incorrect
 ```
+class Solution:
+    def insert(self, intervals: List[List[int]], newInterval: List[int]) -> List[List[int]]:
+        l = []
+        for [i,j] in intervals:
+            l.append(i)
+            l.append(j)
+        
+        length = len(intervals)
+        
+        j = newInterval[0]
+        k = newInterval[1]
+        
+        j_count, k_count = 0, 0 #number less than j and number greater than k
+        for x in l:
+            if x <= j:
+                j_count += 1
+            if x >= k:
+                k_count += 1
+        
+        left = l[j_count - 1]
+        right = l[len(l) - k_count]
+        
+        result = []
+        
+        if j_count // 2 >= 1:
+            for i in range(j_count // 2):
+                result.append(intervals[i])
+        
+        if left == j:
+            result.append([l[l.index(left)-1], k])
+        
+        if right ==k:
+            result.append([left, l[l.index(right) + 1]])
+        
+        else: 
+            result.append([left,k])
+
+        
+        if k_count // 2 >= 1:
+            for i in range(k_count // 2 ):
+                result.append(intervals[len(intervals)- i -1])
+        
+        return result 
+  ```
+  
+  ```
+  ```
