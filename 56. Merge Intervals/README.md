@@ -34,8 +34,8 @@ class Solution:
         return output 
 ```
 ```
-class Solution:
-    def merge(self, intervals: List[List[int]]) -> List[List[int]]:
+class Solution(object):
+    def merge(self, intervals):
         # O(nlogn)
         intervals.sort(key = lambda i :i[0])
         output = [intervals[0]]
