@@ -38,7 +38,5 @@ You can return the answer in any order.
                 return [dict[target-nums[i]],i]
 ```
 
-C++
-```
-```
+
      
