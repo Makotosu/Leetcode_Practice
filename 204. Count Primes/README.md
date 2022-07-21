@@ -33,4 +33,25 @@ class Solution:
                 
         return count
 ```
+Sieve of Eratosthenes
+https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
+
+```
+class Solution:
+    def countPrimes(self, n: int) -> int:
+        
+        if n == 1 or n == 0:
+            return 0 
+        
+        else:
+            m = int(n**0.5) + 1
+            target = [1] * n 
+            
+            for i in range(2, m):
+                if target[i] == 1:
+                    for j in range(i*i, n, i):
+                        target[j] = 0 
+                        
+            return sum(target) - 2          #O(n log log n)
+```
 
