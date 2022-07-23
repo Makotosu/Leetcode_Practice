@@ -34,5 +34,5 @@ class Solution:
             for row in range(m):
                 matrix[row][j] = 0 
                 
-        return matrix 
+        return matrix   # O(mn)
 ```
