@@ -54,7 +54,7 @@ print knapSack(W, wt, val, n)
 ```
 
 ```
-# Dynamic Programming 
+# Dynamic Programming Time Complexity: O(N*W)
 
 # A Dynamic Programming based Python
 # Program for 0-1 Knapsack problem
