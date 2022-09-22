@@ -23,21 +23,21 @@ class Solution:
         if x < 0:
             return False 
         
-        elif x ==0:
-            return True 
+        div = 1
+        while x >= 10*div:
+            div *= 10 
+            
+        # 121, 100
         
-        else:
-            length = 1
-            while 10**length<x:
-                length += 1
+        while x:
+            right = x % 10 
+            left = x // div 
             
-            length -= 1 
+            if left != right:
+                return False 
             
-            while x != 0:
-                if x//(10 ** length) == x %10:
-                    x = x % 10**length // 10
-                    length -=2
-                else:
-                    return False
-            return True
+            x = (x % div) // 10
+            div = div / 100 
+            
+        return True 
 ```        
