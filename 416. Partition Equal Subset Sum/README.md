@@ -39,3 +39,19 @@ class Solution:
                             
                 return True if K[n][W] == W else False
 ```
+
+```
+class Solution:
+    def canPartition(self, nums: List[int]) -> bool:
+        
+        if sum(nums) % 2: return False 
+        
+        st = set([0])
+        
+        for i in nums:
+            for j in list(st):
+                st.add(i + j)
+                if i + j == sum(nums)//2:
+                    return True
+        return False
+```        
