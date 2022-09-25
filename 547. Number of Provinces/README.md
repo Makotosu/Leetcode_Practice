@@ -8,6 +8,8 @@ You are given an n x n matrix isConnected where isConnected[i][j] = 1 if the ith
 
 Return the total number of provinces.
 
+The time complexity of the DFS algorithm is represented in the form of O(V + E), where V is the number of nodes and E is the number of edges.
+
 ```
 Input: isConnected = [[1,1,0],[1,1,0],[0,0,1]]
 Output: 2
