@@ -34,4 +34,6 @@ class Solution:
                 dfs(start)
         
         return num 
+        
+        # time complexity O(n^2)
 ```
