@@ -1,5 +1,9 @@
 ### 540. Single Element in a Sorted Array
 
+https://leetcode.com/problems/single-element-in-a-sorted-array/
+
+# binary search
+
 You are given a sorted array consisting of only integers where every element appears exactly twice, except for one element which appears exactly once.
 
 Return the single element that appears only once.
@@ -35,3 +39,23 @@ class Solution:
                 else:
                     r = m-1
 ```        
+
+```
+def binarySearch(array, x, low, high):
+
+    # Repeat until the pointers low and high meet each other
+    while low <= high:
+
+        mid = low + (high - low)//2
+
+        if array[mid] == x:
+            return mid
+
+        elif array[mid] < x:
+            low = mid + 1
+
+        else:
+            high = mid - 1
+
+    return -1
+```
