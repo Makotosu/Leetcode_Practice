@@ -6,14 +6,14 @@ Given an array of digits digits, return the largest multiple of three that can b
 
 Since the answer may not fit in an integer data type, return the answer as a string. Note that the returning answer must not contain unnecessary leading zeros.
 
-···
+```
 Example 1:
 
 Input: digits = [8,1,9]
 Output: "981"
-···
+```
 
-···
+```
 class Solution:
     def largestMultipleOfThree(self, digits: List[int]) -> str:
         s = sum(digits)
@@ -43,4 +43,4 @@ class Solution:
                 return output if output == '' else str(int(output))
             else:
                 return ''
-···                                              
+```                                       
