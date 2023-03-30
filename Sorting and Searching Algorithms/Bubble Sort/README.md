@@ -48,7 +48,7 @@ def bubbleSort(array):
     return array 
 ```
 
-Time Complexity: O(n^2) 
-Space Complexity: 0(1)
+# Time Complexity: O(n^2) 
+# Space Complexity: 0(1)
 
 
