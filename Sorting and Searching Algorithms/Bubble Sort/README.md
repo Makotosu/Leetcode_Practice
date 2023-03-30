@@ -1,4 +1,5 @@
 # Bubble Sort 
+https://www.programiz.com/dsa/bubble-sort
 
 ```
 def bubbleSort(array):
@@ -46,5 +47,8 @@ def bubbleSort(array):
         break
     return array 
 ```
+
+Time Complexity: O(n^2) 
+Space Complexity: 0(1)
 
 
