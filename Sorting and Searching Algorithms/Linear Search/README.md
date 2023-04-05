@@ -24,3 +24,7 @@ if(result == -1):
 else:
     print("Element found at index: ", result)
 ```
+
+Time Complexity: O(n)
+
+Space Complexity: O(1)
