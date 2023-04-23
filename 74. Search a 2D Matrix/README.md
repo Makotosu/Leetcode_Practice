@@ -55,3 +55,23 @@ class Solution:
 
         return False 
 ```
+
+```
+class Solution:
+    def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
+                # Binary Search
+        row, col = len(matrix), len(matrix[0])
+        i, j = -1, row*col 
+
+        while i+1 != j:
+            mid = (i + j) // 2
+            mid_element = matrix[mid // col][mid % col]
+
+            if mid_element == target:
+                return True
+            elif mid_element < target:
+                i = mid 
+            else:
+                j = mid
+        return False
+```        
