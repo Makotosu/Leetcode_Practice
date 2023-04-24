@@ -38,6 +38,7 @@ def knapSack(W, wt, val, n):
 			knapSack(W, wt, val, n-1))
 
 # end of function knapSack
+# Time Complexity: O(2^N)
 
 
 # Driver Code
