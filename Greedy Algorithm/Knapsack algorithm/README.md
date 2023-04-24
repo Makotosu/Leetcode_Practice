@@ -1,11 +1,11 @@
 ### Knapsack Algorithm 
-
+```
 0/1 knapsack 
 
 f(i, j): maximum utility when u left with j capacity and have already bought i items. 
 
 Then f(i, j) = max{f(i-1, j), f(i-1, j-w(i)) + v(i)}
-
+```
 ```
 # A naive recursive implementation
 # of 0-1 Knapsack Problem
