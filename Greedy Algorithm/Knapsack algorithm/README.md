@@ -5,7 +5,13 @@ https://www.geeksforgeeks.org/0-1-knapsack-problem-dp-10/
 ```
 0/1 knapsack 
 
-f(i, j): maximum utility when u left with j capacity and have already bought i items. 
+The maximum value obtained from ‘N’ items is the max of the following two values. 
+
+Maximum value obtained by N-1 items and W weight (excluding nth item)
+Value of nth item plus maximum value obtained by N-1 items and (W – weight of the Nth item) [including Nth item].
+If the weight of the ‘Nth‘ item is greater than ‘W’, then the Nth item cannot be included and Case 1 is the only possibility.
+
+f(i, j): maximum utility when you have j capacity and have already bought i items. 
 
 Then f(i, j) = max{f(i-1, j), f(i-1, j-w(i)) + v(i)}
 ```
@@ -35,10 +41,8 @@ def knapSack(W, wt, val, n):
 	# (1) nth item included
 	# (2) not included
 	else:
-		return max(
-			val[n-1] + knapSack(
-				W-wt[n-1], wt, val, n-1),
-			knapSack(W, wt, val, n-1))
+		return max(val[n-1] + knapSack(W-wt[n-1], wt, val, n-1),
+				knapSack(W, wt, val, n-1))
 
 # end of function knapSack
 # Time Complexity: O(2^N)
@@ -65,18 +69,16 @@ def knapSack(W, wt, val, n):
 
 	# Build table K[][] in bottom up manner
 	for i in range(n + 1):
-		for w in range(W + 1):
-			if i == 0 or w == 0:
-				K[i][w] = 0
+		for j in range(W + 1):
+			if i == 0 or j == 0:
+				K[i][j] = 0
 			elif wt[i-1] <= w:
-				K[i][w] = max(val[i-1]
-							+ K[i-1][w-wt[i-1]],
-							K[i-1][w])
+				K[i][j] = max(val[i-1]+ K[i-1][w-wt[i-1]],K[i-1][j])
 			else:
-				K[i][w] = K[i-1][w]
+				K[i][j] = K[i-1][j]
 
 	return K[n][W]
-
+# Time Complexity: O(N*W)
 
 # Driver code
 if __name__ == '__main__':
