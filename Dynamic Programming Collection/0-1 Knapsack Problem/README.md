@@ -102,6 +102,7 @@ def knapSack(W, wt, val, n):
     DP = [[0 for x in range(W + 1)] for x in range(n + 1)]
  
     # Build table DP[][] matrix in bottom up manner
+    # The state DP[i][j] will denote the maximum value of ‘j-weight’ considering all values from ‘1 to ith‘. 
     
     for i in range(n + 1):
         for j in range(W + 1):
