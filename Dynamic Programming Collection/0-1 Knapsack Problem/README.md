@@ -98,18 +98,22 @@ print(knapSack(W, wt, val, n))
 # Returns the maximum value that can
 # be put in a knapsack of capacity W
 
-
 def knapSack(W, wt, val, n):
-	dp = [0 for i in range(W+1)] # Making the dp array
-
-	for i in range(1, n+1): # taking first i elements
-		for w in range(W, 0, -1): # starting from back,so that we also have data of
-								# previous computation when taking i-1 items
-			if wt[i-1] <= w:
-				# finding the maximum value
-				dp[w] = max(dp[w], dp[w-wt[i-1]]+val[i-1])
-
-	return dp[W] # returning the maximum value of knapsack
+    DP = [[0 for x in range(W + 1)] for x in range(n + 1)]
+ 
+    # Build table DP[][] matrix in bottom up manner
+    
+    for i in range(n + 1):
+        for j in range(W + 1):
+            if i == 0 or j == 0:
+                DP[i][j] = 0
+            elif wt[i-1] <= j:
+                DP[i][j] = max(val[i-1] + DP[i-1][j-wt[i-1]], DP[i-1][j])
+            else:
+                DP[i][j] = DP[i-1][j]
+ 
+    return DP[n][W]
+    # return DP[-1][-1]
 
 
 # Driver code
@@ -117,7 +121,6 @@ val = [60, 100, 120]
 wt = [10, 20, 30]
 W = 50
 n = len(val)
-# This code is contributed by Suyash Saxena
 print(knapSack(W, wt, val, n))
 
 ```
