@@ -15,43 +15,20 @@ Explanation: The array can be partitioned as [1, 5, 5] and [11].
 ```
 class Solution:
     def canPartition(self, nums: List[int]) -> bool:
+        total_sum = sum(nums)
         
-            s = sum(nums)
-            nums = sorted(nums)
-            
-            if s % 2 == 1:
-                return False 
-            else:
-                W = s // 2
-                n = len(nums)
-                
-                K = [[0 for x in range(W+1)] for x in range(n+1)] 
-                
-                for i in range(n+1):
-                    for w in range(W+1):
-                        if i ==0 or w ==0:
-                            K[i][w] = 0
-                        elif nums[i-1] <= w:
-                            K[i][w] = max(nums[i-1] + K[i-1][w-nums[i-1]], K[i-1][w])
-                        
-                        else:
-                            K[i][w] = K[i-1][w]
-                            
-                return True if K[n][W] == W else False
-```
+        if total_sum % 2 != 0:
+            return False
+        
+        target_sum = total_sum // 2
+        dp = [False] * (target_sum + 1)
+        dp[0] = True
+        # dp where dp[i] represents whether it is possible to form a sum of i using the given numbers in the array.
 
-```
-class Solution:
-    def canPartition(self, nums: List[int]) -> bool:
-        
-        if sum(nums) % 2: return False 
-        
-        st = set([0])
-        
-        for i in nums:
-            for j in list(st):
-                st.add(i + j)
-                if i + j == sum(nums)//2:
-                    return True
-        return False
+        for num in nums:
+            for i in range(target_sum, num-1, -1):
+                dp[i] = dp[i] or dp[i-num]
+                
+                # This means that we can form a sum of i using either the previous elements we have already processed or by adding the current num to the sum of i-num that we have already computed. We iterate over i in reverse order to ensure that we only consider sums that are smaller than or equal to the target sum.
+        return dp[target_sum]
 ```        
