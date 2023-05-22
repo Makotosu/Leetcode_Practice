@@ -27,4 +27,30 @@ class Solution:
                     for y in dp[i-j-1]:
                         dp[i].append('(' + x + ')' + y)
         return dp[n] 
+        # Time complexity of this solution is O(n^2 * 2^n)
 ```
+
+```
+class Solution:
+    def generateParenthesis(self, n: int) -> List[str]:
+        def backtrack(left_count, right_count, current_str, result):
+        # Base case: all parentheses used
+            if left_count == 0 and right_count == 0:
+                result.append(current_str)
+                return
+
+            # If there are remaining left parentheses, add one and recurse
+            if left_count > 0:
+                backtrack(left_count - 1, right_count, current_str + '(', result)
+
+            # If there are more left parentheses than right parentheses, add a right parenthesis and recurse
+            if left_count < right_count:
+                backtrack(left_count, right_count - 1, current_str + ')', result)
+                
+        result = []
+        backtrack(n, n, '', result)
+        return result
+```        
+    
+
+        
