@@ -33,6 +33,7 @@ class Solution:
 ```
 class Solution:
     def generateParenthesis(self, n: int) -> List[str]:
+    
         def backtrack(left_count, right_count, current_str, result):
         # Base case: all parentheses used
             if left_count == 0 and right_count == 0:
