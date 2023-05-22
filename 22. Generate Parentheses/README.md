@@ -44,7 +44,7 @@ class Solution:
             if left_count > 0:
                 backtrack(left_count - 1, right_count, current_str + '(', result)
 
-            # If there are more left parentheses than right parentheses, add a right parenthesis and recurse
+            # If there are less left parentheses than right parentheses, add a right parenthesis and recurse
             if left_count < right_count:
                 backtrack(left_count, right_count - 1, current_str + ')', result)
                 
