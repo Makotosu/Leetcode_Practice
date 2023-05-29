@@ -1,5 +1,7 @@
 ### Basic datatypes
 
+```
+
 n   c   name      sz  literal            null inf SQL       Java      .Net
 ------------------------------------------------------------------------------------
 0   *   list
@@ -23,3 +25,4 @@ n   c   name      sz  literal            null inf SQL       Java      .Net
 17  u   minute    4   00:00              0Nu  0Wu
 18  v   second    4   00:00:00           0Nv  0Wv
 19  t   time      4   00:00:00.000       0Nt  0Wt time      Time      TimeSpan
+```
